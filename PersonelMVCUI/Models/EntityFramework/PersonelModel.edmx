@@ -12,6 +12,15 @@
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Ad" Type="nvarchar" MaxLength="50" />
         </EntityType>
+        <EntityType Name="Kullanici">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Ad" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Sifre" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Role" Type="nvarchar" MaxLength="2" Nullable="false" />
+        </EntityType>
         <EntityType Name="Personel">
           <Key>
             <PropertyRef Name="Id" />
@@ -39,6 +48,7 @@
         </Association>
         <EntityContainer Name="PersonelDbModelStoreContainer">
           <EntitySet Name="Departman" EntityType="Self.Departman" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Kullanici" EntityType="Self.Kullanici" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Personel" EntityType="Self.Personel" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK_Personel_Departman" Association="Self.FK_Personel_Departman">
             <End Role="Departman" EntitySet="Departman" />
@@ -56,6 +66,7 @@
             <End Role="Departman" EntitySet="Departman" />
             <End Role="Personel" EntitySet="Personel" />
           </AssociationSet>
+          <EntitySet Name="Kullanici" EntityType="PersonelDbModel.Kullanici" />
         </EntityContainer>
         <EntityType Name="Departman">
           <Key>
@@ -91,6 +102,15 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="Kullanici">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Ad" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Sifre" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Role" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="true" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -115,6 +135,16 @@
                 <ScalarProperty Name="Soyad" ColumnName="Soyad" />
                 <ScalarProperty Name="Ad" ColumnName="Ad" />
                 <ScalarProperty Name="DepartmanId" ColumnName="DepartmanId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Kullanici">
+            <EntityTypeMapping TypeName="PersonelDbModel.Kullanici">
+              <MappingFragment StoreEntitySet="Kullanici">
+                <ScalarProperty Name="Role" ColumnName="Role" />
+                <ScalarProperty Name="Sifre" ColumnName="Sifre" />
+                <ScalarProperty Name="Ad" ColumnName="Ad" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>

@@ -7,6 +7,15 @@
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Ad" Type="nvarchar" MaxLength="50" />
   </EntityType>
+  <EntityType Name="Kullanici">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Ad" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Sifre" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Role" Type="nvarchar" MaxLength="2" Nullable="false" />
+  </EntityType>
   <EntityType Name="Personel">
     <Key>
       <PropertyRef Name="Id" />
@@ -34,6 +43,7 @@
   </Association>
   <EntityContainer Name="PersonelDbModelStoreContainer">
     <EntitySet Name="Departman" EntityType="Self.Departman" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Kullanici" EntityType="Self.Kullanici" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Personel" EntityType="Self.Personel" Schema="dbo" store:Type="Tables" />
     <AssociationSet Name="FK_Personel_Departman" Association="Self.FK_Personel_Departman">
       <End Role="Departman" EntitySet="Departman" />

@@ -8,6 +8,7 @@
         <EntityTypeShape EntityType="PersonelDbModel.Departman" Width="1.5" PointX="0.75" PointY="1.5" />
         <EntityTypeShape EntityType="PersonelDbModel.Personel" Width="1.5" PointX="3" PointY="1" />
         <AssociationConnector Association="PersonelDbModel.FK_Personel_Departman" />
+        <EntityTypeShape EntityType="PersonelDbModel.Kullanici" Width="1.5" PointX="5.5" PointY="1.375" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

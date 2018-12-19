@@ -1,4 +1,5 @@
 ﻿using PersonelMVCUI.Models.EntityFramework;
+using PersonelMVCUI.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,14 +8,20 @@ using System.Web.Mvc;
 
 namespace PersonelMVCUI.Controllers
 {
+    [Authorize(Roles = "A, U")]
+    
     public class DepartmanController : Controller
     {
         PersonelDbEntities db = new PersonelDbEntities(); 
 
         // GET: Departman
+
+        
         public ActionResult Index()
         {
             var model = db.Departman.ToList();
+            // int a = 10, b = 0;
+            // int c = a / b;
             return View(model);
         }
 
@@ -31,9 +38,13 @@ namespace PersonelMVCUI.Controllers
             {
                 return View("DepartmanForm");
             }
+
+            MesajViewModel model = new MesajViewModel();
+
             if (departman.Id == 0)
             {
                 db.Departman.Add(departman);
+                model.Mesaj = departman.Ad + " başarıyla eklendi.";
             }
             else
             {
@@ -45,11 +56,17 @@ namespace PersonelMVCUI.Controllers
                 else
                 {
                     guncellenecekDepartman.Ad = departman.Ad;
-                    guncellenecekDepartman.Id = departman.Id;
+                    // guncellenecekDepartman.Id = departman.Id;
+                    model.Mesaj = departman.Ad + " başarıyla güncellendi.";
                 }
             }
             db.SaveChanges();
-            return RedirectToAction("Index", "Departman");
+
+            model.Status = true;
+            model.LinkText = "Departman Listesi";
+            model.Url = "/Departman";
+
+            return View("_Mesaj", model);
         }
 
         public ActionResult Guncelle(int id)

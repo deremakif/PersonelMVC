@@ -7,6 +7,7 @@
       <End Role="Departman" EntitySet="Departman" />
       <End Role="Personel" EntitySet="Personel" />
     </AssociationSet>
+    <EntitySet Name="Kullanici" EntityType="PersonelDbModel.Kullanici" />
   </EntityContainer>
   <EntityType Name="Departman">
     <Key>
@@ -42,4 +43,13 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <EntityType Name="Kullanici">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Ad" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Sifre" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Role" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="true" />
+  </EntityType>
 </Schema>

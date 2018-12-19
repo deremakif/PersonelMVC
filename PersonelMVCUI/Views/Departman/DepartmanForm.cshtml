@@ -4,7 +4,8 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-@using (Html.BeginForm("Kaydet", "Departman", FormMethod.Post))
+<div id="mesaj"></div>
+@using (Ajax.BeginForm("Kaydet", "Departman", new AjaxOptions { HttpMethod="POST", UpdateTargetId="mesaj"}))
 {
     @Html.AntiForgeryToken()
     <div class="form-group">

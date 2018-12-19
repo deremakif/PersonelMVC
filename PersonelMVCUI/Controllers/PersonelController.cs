@@ -9,17 +9,21 @@ using PersonelMVCUI.ViewModels;
 
 namespace PersonelMVCUI.Controllers
 {
+    [Authorize(Roles = "A, U")]
     public class PersonelController : Controller
     {
 
         PersonelDbEntities db = new PersonelDbEntities();
         // GET: Personel
+
+        [OutputCache(Duration = 30)]
         public ActionResult Index()
         {
             var model = db.Personel.Include(x=>x.Departman).ToList();
             return View(model);
         }
 
+        
         public ActionResult Yeni()
         {
             var model = new PersonelFormViewModel()
@@ -75,5 +79,16 @@ namespace PersonelMVCUI.Controllers
             return RedirectToAction("Index");
         }
 
+        public ActionResult PersonelleriListele(int id)
+        {
+            var model = db.Personel.Where(x => x.DepartmanId == id).ToList();
+            return PartialView(model);
+        }
+
+        public ActionResult ToplamMaas()
+        {
+            ViewBag.Maas = db.Personel.Sum(x=>x.Maas);
+            return PartialView();
+        }
     }
 }

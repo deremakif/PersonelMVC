@@ -1,0 +1,33 @@
+﻿@model PersonelMVCUI.Models.EntityFramework.Kullanici
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Login</title>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
+
+    <div class="container">
+        <h2>Lütfen Giriş Yapınız!</h2>
+        @ViewBag.Mesaj
+        @using (Html.BeginForm("Login", "Security", FormMethod.Post))
+        {
+            <div class="form-group">
+                @Html.LabelFor(m => m.Ad)
+                @Html.TextBoxFor(m => m.Ad, new { @class = "form-control", placeholder = "Kullanıcı Adı" })
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(m => m.Sifre)
+                @Html.PasswordFor(m => m.Sifre, new { @class = "form-control", placeholder = "Parola" })
+            </div>
+            <button type="submit" class="btn btn-block btn-success">Giriş Yap</button>
+        }
+    </div>
+</body>
+</html>

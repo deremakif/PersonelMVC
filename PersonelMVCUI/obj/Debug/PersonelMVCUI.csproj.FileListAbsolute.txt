@@ -77,3 +77,11 @@ C:\Users\mehmet akif\Desktop\ASP.NET\kenanyildirim\PersonelMVCUI\PersonelMVCUI\o
 C:\Users\mehmet akif\Desktop\ASP.NET\kenanyildirim\PersonelMVCUI\PersonelMVCUI\obj\Debug\PersonelMVCUI.csproj.CopyComplete
 C:\Users\mehmet akif\Desktop\ASP.NET\kenanyildirim\PersonelMVCUI\PersonelMVCUI\obj\Debug\PersonelMVCUI.dll
 C:\Users\mehmet akif\Desktop\ASP.NET\kenanyildirim\PersonelMVCUI\PersonelMVCUI\obj\Debug\PersonelMVCUI.pdb
+C:\Users\mehmet akif\Desktop\ASP.NET\kenanyildirim\PersonelMVCUI\PersonelMVCUI\bin\Antlr3.Runtime.dll
+C:\Users\mehmet akif\Desktop\ASP.NET\kenanyildirim\PersonelMVCUI\PersonelMVCUI\bin\Newtonsoft.Json.dll
+C:\Users\mehmet akif\Desktop\ASP.NET\kenanyildirim\PersonelMVCUI\PersonelMVCUI\bin\System.Web.Optimization.dll
+C:\Users\mehmet akif\Desktop\ASP.NET\kenanyildirim\PersonelMVCUI\PersonelMVCUI\bin\WebGrease.dll
+C:\Users\mehmet akif\Desktop\ASP.NET\kenanyildirim\PersonelMVCUI\PersonelMVCUI\bin\Antlr3.Runtime.pdb
+C:\Users\mehmet akif\Desktop\ASP.NET\kenanyildirim\PersonelMVCUI\PersonelMVCUI\bin\Newtonsoft.Json.xml
+C:\Users\mehmet akif\Desktop\ASP.NET\kenanyildirim\PersonelMVCUI\PersonelMVCUI\bin\System.Web.Optimization.xml
+C:\Users\mehmet akif\Desktop\ASP.NET\kenanyildirim\PersonelMVCUI\PersonelMVCUI\bin\Elmah.dll

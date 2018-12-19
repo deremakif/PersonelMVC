@@ -28,5 +28,6 @@ namespace PersonelMVCUI.Models.EntityFramework
     
         public virtual DbSet<Departman> Departman { get; set; }
         public virtual DbSet<Personel> Personel { get; set; }
+        public virtual DbSet<Kullanici> Kullanici { get; set; }
     }
 }
